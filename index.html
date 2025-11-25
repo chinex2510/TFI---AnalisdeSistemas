@@ -71,5 +71,23 @@
       <li>Integrante 4</li>
     </ul>
   </footer>
+
+  <script>
+    (() => {
+      const header = document.querySelector(".site-header");
+      const shrinkPoint = 80;
+
+      const toggleCompactHeader = () => {
+        if (window.scrollY > shrinkPoint) {
+          header.classList.add("site-header--compact");
+        } else {
+          header.classList.remove("site-header--compact");
+        }
+      };
+
+      toggleCompactHeader();
+      window.addEventListener("scroll", toggleCompactHeader, { passive: true });
+    })();
+  </script>
 </body>
 </html>
